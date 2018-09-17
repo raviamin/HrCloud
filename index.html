@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HR Cloud Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="left">
+                <a href="javascript:void(0)" class="logo"></a>
+                <div class="company">HR CLOUD</div>
+            </div>
+            <div class="right">
+                <a href="javascript:void(0)" class="user"></a>
+                <a href="javascript:void(0)" class="pinned"></a>
+                <a href="javascript:void(0)" class="mailbox"></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="first-page" id="first-page">
+                <div class="empty">
+                    <h1>No Employees added yet</h1>
+                    <button class="button" onclick="showSlider();">Add Employee</button>
+                </div>
+            </div>
+
+            <div class="slider" id="slider">
+                <div class="close-slider">
+                    <a href="javascript:void(0)" class="close-button" onclick="hideSlider();"></a>
+                </div>
+                <div class="field">
+                    <div class="label">Full Name</div>
+                    <div>
+                        <input class="input" type="text" id="fullName" name="fullName"/>
+                        <div class="error-div"></div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="label">Email Id</div>
+                    <div class="">
+                        <input class="input" type="text" id="email" name="email"/>
+                        <div class="error-div"></div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="label">Gross Salary</div>
+                    <div>
+                        <div class="input-wrapper">
+                            <input class="input" type="number" onkeyup="calculateTax();" id="salary" name="salary"/>
+                            <div class="per-annum">p.a.</div>
+                            <div class="error-div"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="label">Investment</div>
+                    <div>
+                        <div class="input-wrapper">
+                            <input class="input" type="number" onkeyup="calculateTax();" id="investment" name="investment"/>
+                            <div class="per-annum">p.a.</div>
+                        </div>
+                        <div class="error-div"></div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="label">Taxable Income</div>
+                    <div class="input-wrapper">
+                        <input class="input" type="number" id="taxIncome" name="taxIncome" disabled/>
+                        <div class="per-annum">p.a.</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="label">Tax Payable</div>
+                    <div class="input-wrapper">
+                        <input class="input" type="number" id="taxPayable" name="taxPayable" disabled/>
+                        <div class="per-annum">p.a.</div>
+                    </div>
+                </div>
+                <div class="button-block">
+                    <button onclick="submitValue();" class="button">Submit</button>
+                </div>
+            </div>
+            <div class="employee-page" id="employeePage">
+                <div class="add-employee">
+                    <button onclick="showSlider()" class="button">Add Employee</button>
+                </div>
+                <div class="employeeDetails" id="employeeDetails"></div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js" type="text/javascript"></script>
+</body>
+</html>
